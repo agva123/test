@@ -1,0 +1,36 @@
+module a-test {
+    namespace "http://test.com/yang/";
+    prefix test;
+
+    organization "test";
+
+    description
+    "sysepo performance test.";
+
+    revision 2019-07-12 {
+        description "initial test revision";
+    }
+
+
+    list test-container {
+	
+		key test-id;
+
+        leaf test-id {
+            type string { length 0..256; }
+            description "test key id";
+        }
+
+        leaf test-name {
+            type string { length 0..256; }
+            default "test123";
+            description "test name";
+        }
+
+        leaf test-location {
+            type string { length 0..256; }
+			default "test";
+            description "test location";
+        }
+    }
+}
